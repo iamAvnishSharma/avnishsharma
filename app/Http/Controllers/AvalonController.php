@@ -26,13 +26,13 @@ class AvalonController extends Controller
     public function create()
     { 
         $data = [];
-        return view('avalon_form')->with('data',$data );
+        return view('avalon_form');
     }
 
     public function create2()
     { 
         $data = [];
-        return view('avalon_form')->with('data',$data );
+        return view('avalon_form2')->with('data',$data );
     }
 
     /**
@@ -69,6 +69,44 @@ class AvalonController extends Controller
         $link = new Link($request->get('link'),$request->get('source'), array('name' => 'arial', 'size'=>'11', 'underline'=> 'single', 'color'=>'#002366'));
         $templateProcessor->setComplexValue('link', $link);
         $templateProcessor->setComplexValue('link', $link);
+
+        $templateProcessor->saveAs(public_path('Testing.docx'));
+        return response()->download(public_path('Testing.docx'));
+    }
+
+    public function store2(Request $request)
+    {
+
+        $headline = $request->input('headline');
+        $twoliner = $request->input('twoliner');
+        $news = $request->input('news');
+        $source = $request->input('source');
+        $link = $request->input('link');
+
+        $c = count($headline);
+        
+        $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(public_path('Sample_Template_Avalon2.docx'));
+
+        $templateProcessor->setValue('date', date('jS F Y'));
+
+        $templateProcessor->cloneBlock('twolineblock', $c , true, true);
+        $templateProcessor->cloneBlock('newsblock', $c , true, true);
+
+        for( $i = 1 ; $i <= $c ; $i++){
+            $templateProcessor->setValue('theadline#'.$i, $headline[$i-1]);
+            $templateProcessor->setValue('headline#'.$i, $headline[$i-1]);
+            $templateProcessor->setValue('twoliner#'.$i, $twoliner[$i-1]);
+            $templateProcessor->setValue('news#'.$i, $news[$i-1]);
+
+            $ln = new Link($link[$i-1],$source[$i-1], array('name' => 'arial', 'size'=>'11', 'underline'=> 'single', 'color'=>'#002366'));
+            $templateProcessor->setComplexValue('tlink#'.$i, $ln);
+            $templateProcessor->setComplexValue('link#'.$i, $ln);
+        }
+        
+
+        // $link = new Link($request->get('link'),$request->get('source'), array('name' => 'arial', 'size'=>'11', 'underline'=> 'single', 'color'=>'#002366'));
+        // $templateProcessor->setComplexValue('link', $link);
+        // $templateProcessor->setComplexValue('link', $link);
 
         $templateProcessor->saveAs(public_path('Testing.docx'));
         return response()->download(public_path('Testing.docx'));
