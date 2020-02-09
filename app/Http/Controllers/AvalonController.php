@@ -50,13 +50,17 @@ class AvalonController extends Controller
 
         $templateProcessor->setValue('date', date('jS F Y'));
 
+        $templateProcessor->cloneBlock('twolineblock', 1 , true);
+        $templateProcessor->cloneBlock('newsblock', 1 , true );
+
         $templateProcessor->setValue('headline', $request->get('headline'));
         $templateProcessor->setValue('twoliner', $request->get('twoliner'));
         $templateProcessor->setValue('news', $request->get('news'));
         $templateProcessor->setValue('source', $request->get('source'));
         //$templateProcessor->setValue('link', $request->get('link'));
 
-        $link = new Link($request->get('link'),$request->get('source'), array('name' => 'arial', 'underline'=> 'single', 'color'=>'#002366'));
+        $link = new Link($request->get('link'),$request->get('source'), array('name' => 'arial', 'size'=>'11', 'underline'=> 'single', 'color'=>'#002366'));
+        $templateProcessor->setComplexValue('link', $link);
         $templateProcessor->setComplexValue('link', $link);
 
         $templateProcessor->saveAs(public_path('Testing.docx'));

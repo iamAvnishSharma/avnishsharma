@@ -17,7 +17,7 @@
             <div class="col-md-2"><label for="Headline">Enter the Headline:</label></div>
             <div class="form-group col-md-8">
             <input type="text" class="form-control" name="headline">
-        </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-2"><label for="Twoliner">Enter the Two-liner:</label></div>
@@ -37,7 +37,6 @@
             <input type="text" class="form-control" name="source">
             </div>
         </div>
-        
         <div class="row">
             <div class="col-md-2"><label for="Link">Enter the Link:</label></div>
             <div class="form-group col-md-8">
@@ -45,11 +44,13 @@
             </div>
         </div>
 
+        
+
 
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <button type="submit" class="btn btn-success">Download</button>
+            <button type="submit" class="btn btn-success">Save</button>
           </div>
         </div>
       </form>
