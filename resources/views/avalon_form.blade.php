@@ -11,6 +11,7 @@
   <body>
     <div class="container">
       <h2>AGR </h2><br/>
+
       <form method="post" action="{{url('store')}}">
         @csrf
         <div class="row">
@@ -44,7 +45,7 @@
             </div>
         </div>
 
-        
+
 
 
         <div class="row">
@@ -55,5 +56,9 @@
         </div>
       </form>
    </div>
-  </body>
+<script>
+
+</script>
+</body>
+    
 </html>

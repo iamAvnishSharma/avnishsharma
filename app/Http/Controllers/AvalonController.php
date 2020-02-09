@@ -24,8 +24,9 @@ class AvalonController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('avalon_form');
+    { 
+        $data = [];
+        return view('avalon_form')->with('data',$data );
     }
 
     /**
