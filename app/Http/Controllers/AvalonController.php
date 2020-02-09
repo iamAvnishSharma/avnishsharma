@@ -63,7 +63,7 @@ class AvalonController extends Controller
         $templateProcessor->setValue('headline', $request->get('headline'));
         $templateProcessor->setValue('twoliner', $request->get('twoliner'));
         $templateProcessor->setValue('news', $request->get('news'));
-        $templateProcessor->setValue('source', $request->get('source'));
+        // $templateProcessor->setValue('source', $request->get('source'));
         //$templateProcessor->setValue('link', $request->get('link'));
 
         $link = new Link($request->get('link'),$request->get('source'), array('name' => 'arial', 'size'=>'11', 'underline'=> 'single', 'color'=>'#002366'));
