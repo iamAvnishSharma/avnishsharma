@@ -17,4 +17,5 @@ Route::get('/', function () {
 });
 
 Route::get('avalon','AvalonController@create');
+Route::get('avalon2','AvalonController@create2');
 Route::post('store','AvalonController@store');

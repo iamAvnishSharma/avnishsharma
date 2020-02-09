@@ -29,6 +29,12 @@ class AvalonController extends Controller
         return view('avalon_form')->with('data',$data );
     }
 
+    public function create2()
+    { 
+        $data = [];
+        return view('avalon_form')->with('data',$data );
+    }
+
     /**
      * Store a newly created resource in storage.
      *

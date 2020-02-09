@@ -14,8 +14,9 @@
     <div class="container">
       <h2>AGR </h2><br/>
 
-    <form method="post" action="{{url('store')}}">
+    {{-- <form method="post" action="{{url('store')}}"> --}}
         
+    <form method="post" action="javascript:void(0)">
         @csrf
         <div class="row">
             <div class="col-md-2"><label for="Headline">Enter the Headline:</label></div>
@@ -47,6 +48,14 @@
             <input type="text" class="form-control" name="link">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+              <button name="next" class="btn btn-success">Next</button>
+            </div>
+          </div>
+
         {{-- <div class="row">
             <div class="col-md-2"><label for="Link">Enter the Link:</label></div>
             <div class="form-group col-md-8">
@@ -64,7 +73,7 @@
    </div>
 <script>
 
-
+    
 
 </script>
 </body>
