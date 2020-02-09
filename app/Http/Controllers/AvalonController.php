@@ -98,9 +98,9 @@ class AvalonController extends Controller
             $templateProcessor->setValue('twoliner#'.$i, $twoliner[$i-1]);
             $templateProcessor->setValue('news#'.$i, $news[$i-1]);
 
-            $ln = new Link($link[$i-1],$source[$i-1], array('name' => 'arial', 'size'=>'11', 'underline'=> 'single', 'color'=>'#002366'));
+            $ln = new Link($link[$i-1] , $source[$i-1] , array('name' => 'arial', 'size'=>'11', 'underline'=> 'single', 'color'=>'#002366'));
             $templateProcessor->setComplexValue('tlink#'.$i, $ln);
-            $templateProcessor->setComplexValue('link#'.$i, $ln);
+            // $templateProcessor->setComplexValue('nlink#'.$i, $ln);
         }
         
 
