@@ -74,6 +74,11 @@ class AvalonController extends Controller
         return response()->download(public_path('Testing.docx'));
     }
 
+    public function download()
+    {
+        return response()->download(public_path('Testing.docx'));
+    }
+
     public function store2(Request $request)
     {
 
@@ -109,7 +114,7 @@ class AvalonController extends Controller
         // $templateProcessor->setComplexValue('link', $link);
 
         $templateProcessor->saveAs(public_path('Testing.docx'));
-        return response()->download(public_path('Testing.docx'));
+        return 'sucess';
     }
 
     /**

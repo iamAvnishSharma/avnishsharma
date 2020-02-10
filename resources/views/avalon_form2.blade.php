@@ -66,7 +66,15 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <button id="download" class="btn btn-success">Save</button>
+            <button id="download" class="btn btn-success">Process</button>
+          </div>
+        </div>
+      </form>
+      <form method="post" action="{{url('download')}}">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+            <button type="submit" class="btn btn-success">Download</button>
           </div>
         </div>
       </form>
